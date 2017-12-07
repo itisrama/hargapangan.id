@@ -1,0 +1,839 @@
+/** 
+ *------------------------------------------------------------------------------
+ * @package       T3 Framework for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github 
+ *                & Google group to become co-author)
+ * @Google group: https://groups.google.com/forum/#!forum/t3fw
+ * @Link:         http://t3-framework.org 
+ *------------------------------------------------------------------------------
+ */
+ 
+
+// --------------------------------------------------
+// BOOTSTRAP COMPONENTS STYLES
+// --------------------------------------------------
+
+//
+// TITLES
+// --------------------------------------------------
+
+// Page header
+// -----------
+.page-header {
+	padding-bottom: ((@line-height-computed / 2) - 1);
+	margin: 0 0 @line-height-computed;
+	border-bottom: 1px solid @page-header-border-color;
+}
+
+.page-title,
+.page-header h1 {
+	line-height: 1;
+	margin: 0;
+}
+
+
+// Page Subheader
+// --------------
+.page-subheader {
+	border-bottom: 1px solid @t3-border-color;
+	margin: 0 0 @line-height-computed;
+	.clearfix();
+}
+
+.page-subtitle,
+.page-subheader h2 {
+	line-height: 1;
+	margin: 0;
+}
+
+.page-header + .page-subheader {
+	margin-top: -@line-height-computed; //If there is page header, then omit the space before page subheader
+}
+
+
+// Article Header
+// --------------
+.article-header {
+}
+
+.article-title,
+.article-header h1 {
+	margin: 0 0 @line-height-computed 0;
+}
+
+// Smaller "Article Title" in Blog and List layout
+h2.article-title,
+.article-header h2 {
+}
+
+
+// Item Header
+// -----------
+.item-title {
+	font-weight: bold;
+}
+
+
+
+//
+// MASHEAD & JUMBOTRON
+// --------------------------------------------------
+
+// Jumbotron (jumbotron.less)
+// --------------------------
+.jumbotron {
+
+	h1, h2, h3 {
+		margin-top: 0;
+	}
+
+	p {
+		// Remove margin on last paragraph
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.container & {
+		border-radius: @border-radius-large; // Only round corners at higher resolutions if contained in a container
+	}
+
+	@media screen and (min-width: @grid-float-breakpoint) {
+		.container & {
+		}
+		h1 {
+		}
+	}
+
+}
+
+// Mashead
+// --------
+.masthead {
+	padding: (@t3-global-padding * 2) 0;
+	text-align: center;
+
+	p {
+		// Remove margin on last paragraph
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	@media screen and (min-width: @grid-float-breakpoint) {
+		padding: (@t3-global-padding * 4) 0;
+
+		h1 {
+			font-size: @font-size-base * 7;
+		}
+
+		p {
+			font-size: @font-size-base * 2;
+		}
+
+		// Bigger mashead btn
+		.btn-lg {
+			margin-top: @line-height-computed;
+			padding: 18px 42px;
+			font-size: @font-size-base * 1.5;
+		}
+	}
+
+}
+
+
+// T3 Jumbotron Primary
+// --------------------
+.jumbotron-primary {
+	background-color: @brand-primary;
+	color: lighten(@brand-primary, 50%);
+	h1, h2, h3 {
+		color: @white;
+	}
+	p {
+		color: @white;
+	}
+	.btn-primary {
+		border-color: #fff;
+	}
+}
+
+
+
+//
+// LABELS & BADGES
+// --------------------------------------------------
+
+// Labels (labels.less)
+// --------------------
+
+.label {
+
+	// Add hover effects, but only for links
+	&[href] {
+		&:hover,
+		&:focus {
+		}
+	}
+
+	// Empty labels collapse automatically (not available in IE8)
+	&:empty {
+		display: none;
+	}
+}
+
+// Colors
+// Contextual variations (linked labels get darker on :hover)
+
+.label-default {
+}
+
+.label-primary {
+}
+
+.label-success {
+}
+
+.label-info {
+}
+
+.label-warning {
+}
+
+.label-danger {
+}
+
+
+// Badges (badges.less)
+// --------------------
+
+// Base classes
+.badge {
+
+	// Empty badges collapse automatically (not available in IE8)
+	&:empty {
+		display: none;
+	}
+}
+
+// Hover state, but only for links
+a.badge {
+	&:hover,
+	&:focus {
+	}
+}
+
+// Quick fix for labels/badges in buttons
+.btn .badge {
+	position: relative;
+	top: -1px;
+}
+
+// Quick fix for labels/badges in page-header- NNTH
+.page-header {
+	.label, .badge {
+		vertical-align: middle;
+	}
+}
+
+
+
+//
+// THUMBNAILS  (thumbnails.less)
+// --------------------------------------------------
+
+// Mixin and adjust the regular image class
+.thumbnail {
+	> img {
+	}
+}
+
+// Add a hover state for linked versions only
+a.thumbnail:hover,
+a.thumbnail:focus,
+a.thumbnail.active {
+}
+
+// Image captions
+.thumbnail .caption {
+}
+
+
+
+//
+// ALERTS (alerts.less)
+// --------------------------------------------------
+
+// Base styles
+// -------------------------
+.alert {
+
+	// Headings for larger alerts
+	h4 {
+		color: inherit;
+	}
+
+	// Provide class for links that match alerts
+	.alert-link {
+	}
+
+}
+
+
+// Dismissable alerts
+// ------------------
+.alert-dismissable {
+}
+
+
+// Alternate styles
+// ---------------
+.alert-success {
+}
+
+.alert-info {
+}
+
+.alert-warning {
+}
+
+.alert-danger {
+}
+
+
+
+//
+// MEDIA OBJECTS (media.less)
+// Source: http://stubbornella.org/content/?p=497
+// --------------------------------------------------
+
+// Common styles
+// -------------------------
+.media,
+.media .media {
+}
+
+.media:first-child {
+	margin-top: 0;
+}
+
+.media-object {
+	display: block;
+}
+
+.media-heading {
+	margin: 0 0 5px;
+}
+
+
+// Media image alignment
+// -------------------------
+.media {
+	> .pull-left {
+		margin-right: 10px;
+	}
+	> .pull-right {
+		margin-left: 10px;
+	}
+}
+
+
+// Media list variation
+// -------------------------
+.media-list {
+}
+
+
+
+//
+// LIST GROUP (list-groups.less)
+// --------------------------------------------------
+// Base class
+//
+// Easily usable on <ul>, <ol>, or <div>.
+.list-group {
+	// No need to set list-style: none; since .list-group-item is block level
+}
+
+
+// Individual list items
+// -------------------------
+.list-group-item {
+
+	// first and last items
+	&:first-child {
+	}
+	&:last-child {
+	}
+
+	// Align badges within list items
+	> .badge {
+		float: right;
+	}
+	> .badge + .badge {
+		margin-right: 5px;
+	}
+}
+
+// Linked list items
+a.list-group-item {
+
+	.list-group-item-heading {
+	}
+
+	// Hover state
+	&:hover,
+	&:focus {
+	}
+
+	// Active class on item itself, not parent
+	&.active,
+	&.active:hover,
+	&.active:focus {
+
+		// Force color to inherit for custom content
+		.list-group-item-heading {
+			color: inherit;
+		}
+		.list-group-item-text {
+			color: lighten(@list-group-active-bg, 40%);
+		}
+	}
+}
+
+// Custom content options
+// -------------------------
+.list-group-item-heading {
+}
+
+.list-group-item-text {
+}
+
+
+
+//
+// PANELS (panels.less)
+// --------------------------------------------------
+// Base class
+.panel {
+}
+
+// Panel contents
+.panel-body {
+}
+
+
+// Optional heading
+.panel-heading {
+	> .dropdown .dropdown-toggle {
+		color: inherit;
+	}
+}
+
+// Within heading, strip any `h*` tag of it's default margins for spacing.
+.panel-title {
+	> a {
+		color: inherit;
+	}
+}
+
+// Optional footer (stays gray in every modifier class)
+.panel-footer {
+}
+
+
+// Collapsable panels (aka, accordion)
+.panel-group {
+
+	.panel {
+		+ .panel {
+		}
+	}
+
+	.panel-heading {
+		+ .panel-collapse .panel-body {
+		}
+	}
+
+	.panel-footer {
+		+ .panel-collapse .panel-body {
+		}
+	}
+
+}
+
+
+// Contextual variations
+.panel-default {
+}
+
+.panel-primary {
+}
+
+.panel-success {
+}
+
+.panel-warning {
+}
+
+.panel-danger {
+}
+
+.panel-info {
+}
+
+
+
+//
+// WELLS (wells.less)
+// --------------------------------------------------
+// Base class
+.well {
+	blockquote {
+	}
+}
+
+// Sizes
+.well-lg {
+}
+
+.well-sm {
+}
+
+
+
+//
+// MODALS (modals.less)
+// --------------------------------------------------
+// Container that the modal scrolls within
+.modal {
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+}
+
+// Actual modal
+.modal-content {
+	color: @gray-darker;
+
+	table thead th {
+		background-color: @brand-primary;
+		color: @white;
+	}
+}
+
+// Modal background
+.modal-backdrop {
+	// Fade for backdrop
+	&.fade { .opacity(0); }
+	&.in { .opacity(.5); }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+}
+// Close icon
+.modal-header .close {
+	color: @link-color;
+}
+
+// Title text within header
+.modal-title {
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+}
+
+// Footer (for actions)
+.modal-footer {
+}
+
+// Scale up the modal
+@media screen and (min-width: @screen-sm-min) {
+	.modal-dialog {
+		width: 600px;
+		margin: 30px auto;
+	}
+	.modal-content {
+		.box-shadow(0 5px 15px rgba(0,0,0,.5));
+	}
+}
+
+
+
+//
+// TOOLTIPS (tooltips.less)
+// --------------------------------------------------
+
+// Base class
+.tooltip {
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+}
+
+// Arrows
+.tooltip-arrow {
+}
+
+
+#com_gtpihps {
+	.form-filter {
+		padding: @t3-global-padding;
+		background-color: fade(@blue-dark, 40%);
+		border: 1px solid @blue-dark;
+		margin-right: @grid-gutter-width;
+	}
+
+	.table .currency, .table .btn {
+		display: inline-block;
+		margin: 0;
+		vertical-align: middle;
+	}
+
+	.table .currency {
+		text-align: right;
+	}
+}
+
+.com_gtpihps.view-widget {
+	.window-mainbody {
+		padding: 0;
+	}
+}
+#com_gtpihps.widget {
+	h3, footer {
+		width: 100%;
+		max-width: 500px;
+		padding: 5px 0;
+		background: @gray-dark;
+		position: fixed;
+		top: 0;
+		left: 0;
+		margin: 0;
+		text-align: center;
+		span {
+			white-space: nowrap;
+		}
+		small {
+			margin-top: 5px;
+			display: block;
+			color: @white;
+			text-transform: uppercase;
+		}
+	}
+	.table {
+		margin-bottom: 0;
+		max-width: 500px;
+		border-collapse: inherit;
+		.price {
+			max-width: 100px;
+			white-space: nowrap;
+		}
+		.denom {
+			padding-left: 0;
+			max-width: 35px;
+			white-space: nowrap;
+		}
+		.flucs {
+			max-width: 70px;
+		}
+		.status {
+			max-width: 30px;
+		}
+
+		.category td {
+			background-color: fade(@blue-dark, 50%);
+		}
+	}
+
+	footer {
+		background: @blue;
+		bottom: 0;
+		padding: 5px;
+		top: auto;
+		text-align: left;
+		a {
+			span, img {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 5px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 350px) {
+		.table .flucs {
+			display: none;
+		}
+		h3 span {
+			text-transform: uppercase;
+			font-size: 0.8em;
+		}
+
+		footer a span {
+			display: none;
+		}
+	}
+}
+
+#com_gtpihps .pricelist {
+	h3 {
+		text-align: center;
+		font-weight: bold;
+		small, select, span {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		select {
+			font-family: @font-family-base;
+			font-size: @font-size-base;
+			font-weight: normal;
+		}
+		small {
+			color: @text-color;
+		}
+	}
+	h3 small {
+		margin-left: 5px;
+	}
+	ul {
+		display: block;
+		margin: -2.5px -2.5px 0 !important;
+		float: left;
+		padding: 0;
+		overflow: hidden;
+	}
+	ul li {
+		background-color: fade(@blue-dark, 40%);
+		display: block;
+		width: 277.25px;
+		float: left;
+		margin: 2.5px;
+		height: auto;
+		cursor: pointer;
+		background-repeat: no-repeat;
+		background-position: 10px 25px;
+		overflow: hidden;
+		> div {
+			color: @white;
+			
+		}
+		> a:hover {
+			text-decoration: none;
+			.title {
+				background-color: fade(@blue-dark, 50%)
+			}
+		}
+		.ico, .desc {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.ico {
+			background: url('../images/modules/price_still.png') no-repeat center;
+			margin: 5px 0;
+			margin-right: 5px;
+			text-align: center;
+		}
+		.desc {
+			line-height: 1.7em;
+			float: right;
+			text-align: right;
+			padding: 10px;
+
+		}
+		.spark {
+			position: absolute;
+			margin: 15px;
+		}
+		.title {
+			white-space: nowrap;
+			text-transform: uppercase;
+			text-align: center;
+			background-color: @blue-dark;
+			margin: 3px;
+			padding: 3px;
+		}
+		.price_now {
+			font-size: @font-size-h2;
+			font-weight: bold;
+			
+			div {
+				font-weight: normal;
+				font-size: 0.5em;
+				text-transform: uppercase;
+			}
+		}
+		.diff_perc, .diff {
+			display: none;
+			line-height: 1.2em;
+		}
+		.price_desc {
+			padding: 0 10px;
+			margin-top: 5px;
+			margin-right: -10px;
+			color: @white !important;
+			width: auto;
+			text-align: right;
+			display: inline-block;
+			&.price_down {
+				background: @green !important;
+			}
+			&.price_up {
+				background: @red !important;
+			}
+			&.price_still {
+				background: @blue !important;
+			}
+		}
+	}
+	ul li.price_up {
+		background-color: @red;
+		.ico {
+			background: url('../images/modules/price_up.png') no-repeat center top;
+		}
+		.diff_perc, .diff {
+			display: block;
+		}
+		.diff_perc {
+			margin-top: 20px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+	ul li.price_down {
+		background-color: @green;
+		.ico {
+			background: url('../images/modules/price_down.png') no-repeat center bottom;
+		}
+		.diff_perc, .diff {
+			display: block;
+		}
+		.diff_perc {
+			margin-top: -2px;
+			font-size: 16px;
+			font-weight: bold;
+		}
+	}
+}
+
+
+table.dataTable,
+table.dataTable th,
+table.dataTable td {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.flot-text {
+	color: @text-color !important;
+}
