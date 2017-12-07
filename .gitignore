@@ -1,0 +1,17 @@
+/configuration.php
+/t3-assets/dev
+
+
+# exclude everything
+administrator/cache/*
+cache/*
+logs/*
+t3-assets/*
+tmp/*
+
+# exception to the rule
+!administrator/cache/index.html
+!cache/index.html
+!logs/index.html
+!t3-assets/index.html
+!tmp/index.html

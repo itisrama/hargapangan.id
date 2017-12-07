@@ -1,0 +1,63 @@
+.home {
+	#t3-mainbody {
+		display: none;
+	}
+}
+
+.jqstooltip {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+.calendar-container {
+	min-width: 262px !important;
+}
+
+.datepicker {
+	color: @black;
+}
+
+@-moz-document url-prefix() {
+	.popover.top > .arrow {
+		bottom: -10px
+	}
+	.popover.bottom > .arrow {
+		top: -10px
+	}
+	.popover.right > .arrow {
+		left: -10px
+	}
+	.popover.right > .arrow {
+		right: -10px
+	}
+
+	.tooltip.top .tooltip-arrow,
+	.tooltip.top-left .tooltip-arrow,
+	.tooltip.top-right .tooltip-arrow {
+		bottom: 1px;
+	}
+	.tooltip.right .tooltip-arrow {
+		left: 1px;
+	}
+	.tooltip.left .tooltip-arrow {
+		right: 1px;
+	}
+	.tooltip.bottom .tooltip-arrow,
+	.tooltip.bottom-left .tooltip-arrow,
+	.tooltip.bottom-right .tooltip-arrow {
+		top: 1px;
+	}
+}
+
+.blockMsg {
+	background: transparent !important;
+	color: @text-color !important;
+	font-size: @font-size-h1 !important;
+	font-family: @font-family-base2 !important;
+	border: none !important;
+}
+
+.blockUI {
+	z-index: @zindex-navbar - 1 !important;
+}
